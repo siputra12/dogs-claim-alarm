@@ -14,7 +14,7 @@ def mpp(file):
     return proc
 
 def mps():
-    args = ["termux-volume", "stop"]
+    args = ["termux-media-player", "stop"]
     proc = subprocess.run(
             args, capture_output=True, check=True, text=True
         )
