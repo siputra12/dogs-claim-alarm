@@ -1,8 +1,10 @@
 import requests, time, subprocess
 from datetime import datetime
 
+R_ADDR = "UQACVaM1jvUE2FGG3xnfNUWcdNJFwCl1UhI4mZowl8hCsXPI"
+
 def check_busy():
-    res = requests.post("https://ton-claim.sign.tg/api/airdrop-open/query-pid", json={"slug":"dogs","recipient":"UQACVaM1jvUE2FGG3xnfNUWcdNJFwCl1UhI4mZowl8hCsXPI"}).json()
+    res = requests.post("https://ton-claim.sign.tg/api/airdrop-open/query-pid", json={"slug":"dogs","recipient":R_ADDR}).json()
     ret = True if len(res['data']['projectIds']) >= 1 else False
     return ret
 
